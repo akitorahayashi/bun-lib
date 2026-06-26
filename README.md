@@ -1,15 +1,28 @@
 # bun-lib
 
-To install dependencies:
+A Bun and TypeScript library template.
 
-```bash
+## Setup
+
+```sh
 bun install
 ```
 
-To run:
+## Usage
 
-```bash
-bun run index.ts
+```ts
+import { createSlug } from 'bun-lib';
+
+const slug = createSlug('Hello, Bun Library!');
+console.log(slug);
 ```
 
-This project was created using `bun init` in bun v1.3.14. [Bun](https://bun.com) is a fast all-in-one JavaScript runtime.
+## Development
+
+```sh
+bun run fix
+bun run check
+bun test
+```
+
+The package exports its public API from `src/index.ts`. Bun projects can consume the repository directly from a GitHub URL dependency.
