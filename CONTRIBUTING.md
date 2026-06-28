@@ -4,9 +4,14 @@
 
 This repository owns:
 
-- `src/` — public exports, feature modules, and library errors
-- `tests/` — package behavior tests
+- `src/` — public exports, feature modules, library errors, and colocated unit tests
+- `tests/` — integration tests
 - `.github/workflows/` — CI automation
+
+## Testing Policy
+
+- Unit tests live next to source files under `src/` and test pure transformations.
+- Integration tests live under `tests/` and test filesystem, CLI, subprocess, or network behavior.
 
 ## Workflow
 
