@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'bun:test';
-import { createSlug, SlugValidationError } from '../src';
+import { createSlug, SlugValidationError } from './index';
 
 describe('createSlug', () => {
   test('normalizes text into a lowercase hyphenated slug', () => {

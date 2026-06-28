@@ -7,8 +7,9 @@ src/
   index.ts            Public export boundary
   errors.ts           Library error base classes and feature errors
   <feature>.ts        Focused library feature modules
+  <feature>.test.ts   Colocated unit tests
 tests/
-  <feature>.test.ts   Public behavior tests for feature modules
+  <name>.test.ts      Integration tests
 ```
 
 ## Architecture
@@ -37,6 +38,8 @@ bun test         # Run all tests
 
 - `bun run fix` runs before `bun run check`.
 - Tests assert public behavior through exports from `src/index.ts`.
+- Unit tests live next to source files under `src/` and test pure transformations.
+- Integration tests live under `tests/` and test filesystem, CLI, subprocess, or network behavior.
 - Feature modules remain framework-independent and avoid process, filesystem, and network side effects unless that is the module's explicit responsibility.
 - New public APIs include tests at the package boundary.
 - Package consumers import from the package root, not from nested source files.
